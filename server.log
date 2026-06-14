@@ -1,0 +1,31 @@
+INFO:     Started server process [8796]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:60231 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60232 - "POST /api/signup HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60233 - "POST /api/signup HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60234 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60235 - "POST /api/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53846 - "GET /signup HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53847 - "GET /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53848 - "GET /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54113 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54113 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52214 - "POST /api/signup HTTP/1.1" 201 Created
+INFO:     127.0.0.1:52214 - "GET /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62561 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62561 - "GET /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60466 - "GET /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49185 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49185 - "GET /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53783 - "GET /signup HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52231 - "POST /api/signup HTTP/1.1" 201 Created
+INFO:     127.0.0.1:52231 - "GET /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55972 - "GET /signup HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55972 - "GET /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55972 - "GET /signup HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60665 - "POST /api/signup HTTP/1.1" 201 Created
+INFO:     127.0.0.1:60665 - "GET /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52814 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52814 - "GET /dashboard HTTP/1.1" 200 OK
