@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchant Sign Up</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Background */
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        /* Center Container */
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Signup Box */
+        .signup-box {
+            background: #f8f7ff;
+            padding: 35px;
+            border-radius: 15px;
+            border: 3px solid #6a5acd;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* LOGO CENTERED */
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo svg {
+            width: 300px;
+            /* increased size */
+            height: auto;
+        }
+
+        /* Heading */
+        .signup-box h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Inputs */
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        /* Inline validation messages */
+        .field-msg {
+            display: block;
+            font-size: 12px;
+            margin-top: 4px;
+            min-height: 14px;
+        }
+
+        /* Checkbox */
+        .checkbox {
+            margin: 10px 0;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        /* Button */
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #6a5acd, #7b68ee);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #483d8b, #6a5acd);
+        }
+
+        /* Signin link */
+        .signin-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .signin-link a {
+            color: #6a5acd;
+            text-decoration: none;
+        }
+
+        .signin-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 500px) {
+            .signup-box {
+                margin: 20px;
+                padding: 25px;
+            }
+
+            .logo svg {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="signup-box">
+
+            <!-- LOGO -->
+            <div class="logo">
+                <svg viewBox="0 0 650 220">
+                    <defs>
+                        <style>
+                            .text-clari {
+                                font-weight: 700;
+                                fill: #0052cc;
+                                font-size: 56px;
+                            }
+
+                            .text-5 {
+                                font-weight: 700;
+                                fill: #26d00c;
+                                font-size: 62px;
+                            }
+
+                            .text-pay {
+                                font-weight: 700;
+                                fill: #0a2540;
+                                font-size: 56px;
+                            }
+
+                            .text-tagline {
+                                fill: #4a5568;
+                                font-size: 13px;
+                            }
+                        </style>
+                    </defs>
+
+                    <g transform="translate(10, 5)">
+                        <path d="M 55 125 C 35 105 38 65 62 48 C 50 68 48 105 76 132 Z" fill="#0052cc" />
+                        <path d="M 145 125 C 165 105 162 65 138 48 C 150 68 152 105 124 132 Z" fill="#26d00c" />
+
+                        <path d="M 100 35 C 80 35 60 42 60 65 C 60 105 85 135 100 148 Z" fill="none" stroke="#0052cc" stroke-width="5" />
+                        <path d="M 100 35 C 120 35 140 42 140 65 C 140 105 115 135 100 148 Z" fill="none" stroke="#26d00c" stroke-width="5" />
+
+                        <rect x="74" y="110" width="52" height="42" rx="6" fill="#0a2540" />
+                        <path d="M 88 130 L 96 137 L 112 120" stroke="#fff" stroke-width="3" fill="none" />
+                    </g>
+
+                    <g transform="translate(195, 122)">
+                        <text>
+                            <tspan class="text-clari">clari</tspan>
+                            <tspan class="text-5">5</tspan>
+                            <tspan class="text-pay">pay</tspan>
+                        </text>
+                    </g>
+
+                    <g transform="translate(195, 155)">
+                        <text class="text-tagline">Secure Payments. Trusted Always.</text>
+                    </g>
+                </svg>
+            </div>
+
+            <h2>Merchant Sign Up</h2>
+
+            <form>
+                <div class="input-group">
+                    <label>User ID</label>
+                    <input type="text" id="name" placeholder="Enter User ID">
+                    <small class="field-msg" id="nameError"></small>
+                </div>
+
+                <div class="input-group">
+                    <label>Email ID</label>
+                    <input type="email" id="email" placeholder="Enter Email ID">
+                    <small class="field-msg" id="emailError"></small>
+                </div>
+
+                <div class="input-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="phone_no" placeholder="Enter Phone Number">
+                    <small class="field-msg" id="phoneError"></small>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="Enter Password">
+                    <small class="field-msg" id="passwordError"></small>
+                </div>
+
+                <div class="input-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password">
+                    <small class="field-msg" id="confirmError"></small>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="agree">
+                    <label for="agree">I agree to Terms & Conditions and Privacy Policy</label>
+                </div>
+
+                <button type="button" id="submitBtn" onclick="submitSignup()">Sign Up</button>
+
+                <p id="generalMsg" class="field-msg" style="text-align:center; min-height:16px;"></p>
+
+                <p class="signin-link">
+                    Already have an account? <a href="/login">Sign In</a>
+                </p>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+
+        // ── SMALL HELPERS (these were called but never defined) ───────────────
+        function showError(id, msg) {
+            const el = document.getElementById(id);
+            if (el) { el.style.color = '#e53e3e'; el.textContent = msg; }
+        }
+
+        function showSuccess(id, msg) {
+            const el = document.getElementById(id);
+            if (el) { el.style.color = '#2f855a'; el.textContent = msg; }
+        }
+
+        function clearAllErrors() {
+            ['nameError', 'emailError', 'phoneError', 'passwordError', 'confirmError', 'generalMsg']
+                .forEach(id => { const el = document.getElementById(id); if (el) el.textContent = ''; });
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        // ── CONFIRM PASSWORD — checks live as user types ──────────────────────
+        document.getElementById('confirmPassword').addEventListener('input', function () {
+            const password = document.getElementById('password').value;
+            const confirmPassword = this.value;
+
+            if (confirmPassword === '') {
+                showError('confirmError', '');
+            } else if (password !== confirmPassword) {
+                showError('confirmError', 'Passwords do not match');
+            } else {
+                showError('confirmError', '');  // clear error
+                showSuccess('confirmError', '✓ Passwords match');
+            }
+        });
+
+
+        // ── SUBMIT FUNCTION ───────────────────────────────────────────────────
+        async function submitSignup() {
+
+            // Clear all previous errors
+            clearAllErrors();
+
+            // Get values from form
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const phone_no = document.getElementById('phone_no').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // ── FRONTEND VALIDATION ──────────────────────────────────────────
+
+            let hasError = false;
+
+            // Check name
+            if (name === '') {
+                showError('nameError', 'Name is required');
+                hasError = true;
+            }
+
+            // Check email
+            if (email === '') {
+                showError('emailError', 'Email is required');
+                hasError = true;
+            } else if (!isValidEmail(email)) {
+                showError('emailError', 'Enter a valid email address');
+                hasError = true;
+            }
+
+            // Check password
+            if (password === '') {
+                showError('passwordError', 'Password is required');
+                hasError = true;
+            } else if (password.length < 8) {
+                showError('passwordError', 'Password must be at least 8 characters');
+                hasError = true;
+            }
+
+            // Check confirm password
+            if (confirmPassword === '') {
+                showError('confirmError', 'Please confirm your password');
+                hasError = true;
+            } else if (password !== confirmPassword) {
+                showError('confirmError', 'Passwords do not match');
+                hasError = true;
+            }
+
+            // Stop here if any validation failed — don't send to server
+            if (hasError) return;
+
+            // ── SEND DATA TO FASTAPI ─────────────────────────────────────────
+
+            // Disable button to prevent double submit
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.textContent = 'Creating account...';
+
+            try {
+                const response = await fetch('/api/signup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name,
+                        email,
+                        password,
+                        phone_no
+                    })
+                })
+                const result = await response.json();
+
+                if (response.ok) {
+                    
+                    document.getElementById('generalMsg').style.color = 'green';
+                    document.getElementById('generalMsg').textContent =
+                        'Account created! Redirecting to login...';
+
+                    setTimeout(() => {
+                        window.location.href = '/login'; 
+                    }, 1500);
+
+                } else {
+                    // ── Server error (e.g. email exists) ─────────────────────
+                    document.getElementById('generalMsg').style.color = 'red';
+                    document.getElementById('generalMsg').textContent = result.detail;
+
+                    btn.disabled = false;
+                    btn.textContent = 'Create Account';
+                }
+
+            } catch (error) {
+                document.getElementById('generalMsg').style.color = 'red';
+                document.getElementById('generalMsg').textContent =
+                    'Cannot connect to server. Please try again.';
+
+                btn.disabled = false;
+                btn.textContent = 'Create Account';
+            }
+        }
+       
+
+
+    </script>
+
+</body>
+
+</html>

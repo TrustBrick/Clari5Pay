@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard · Clari5Pay</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Background */
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        /* Center Container */
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Card */
+        .signup-box {
+            background: #f8f7ff;
+            padding: 35px;
+            border-radius: 15px;
+            border: 3px solid #6a5acd;
+            width: 100%;
+            max-width: 460px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* LOGO CENTERED */
+        .logo {
+            margin-bottom: 10px;
+        }
+
+        .logo svg {
+            width: 260px;
+            height: auto;
+        }
+
+        .welcome {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 22px;
+        }
+
+        /* Info panel showing the logged-in user */
+        .user-panel {
+            background: #ffffff;
+            border: 1px solid #e5e1f7;
+            border-radius: 10px;
+            padding: 18px;
+            text-align: left;
+            margin-bottom: 22px;
+        }
+
+        .user-panel .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 14px;
+        }
+
+        .user-panel .row .label {
+            color: #6b7280;
+        }
+
+        .user-panel .row .value {
+            color: #0a2540;
+            font-weight: 700;
+            word-break: break-all;
+        }
+
+        .status-pill {
+            display: inline-block;
+            background: #e6f9e2;
+            color: #1f7a16;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 999px;
+        }
+
+        /* Button */
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #6a5acd, #7b68ee);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #483d8b, #6a5acd);
+        }
+
+        /* Responsive */
+        @media (max-width: 500px) {
+            .signup-box {
+                margin: 20px;
+                padding: 25px;
+            }
+
+            .logo svg {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="signup-box">
+
+            <!-- LOGO -->
+            <div class="logo">
+                <svg viewBox="0 0 650 220">
+                    <defs>
+                        <style>
+                            .text-clari {
+                                font-weight: 700;
+                                fill: #0052cc;
+                                font-size: 56px;
+                            }
+
+                            .text-5 {
+                                font-weight: 700;
+                                fill: #26d00c;
+                                font-size: 62px;
+                            }
+
+                            .text-pay {
+                                font-weight: 700;
+                                fill: #0a2540;
+                                font-size: 56px;
+                            }
+
+                            .text-tagline {
+                                fill: #4a5568;
+                                font-size: 13px;
+                            }
+                        </style>
+                    </defs>
+
+                    <g transform="translate(10, 5)">
+                        <path d="M 55 125 C 35 105 38 65 62 48 C 50 68 48 105 76 132 Z" fill="#0052cc" />
+                        <path d="M 145 125 C 165 105 162 65 138 48 C 150 68 152 105 124 132 Z" fill="#26d00c" />
+
+                        <path d="M 100 35 C 80 35 60 42 60 65 C 60 105 85 135 100 148 Z" fill="none" stroke="#0052cc" stroke-width="5" />
+                        <path d="M 100 35 C 120 35 140 42 140 65 C 140 105 115 135 100 148 Z" fill="none" stroke="#26d00c" stroke-width="5" />
+
+                        <rect x="74" y="110" width="52" height="42" rx="6" fill="#0a2540" />
+                        <path d="M 88 130 L 96 137 L 112 120" stroke="#fff" stroke-width="3" fill="none" />
+                    </g>
+
+                    <g transform="translate(195, 122)">
+                        <text>
+                            <tspan class="text-clari">clari</tspan>
+                            <tspan class="text-5">5</tspan>
+                            <tspan class="text-pay">pay</tspan>
+                        </text>
+                    </g>
+
+                    <g transform="translate(195, 155)">
+                        <text class="text-tagline">Secure Payments. Trusted Always.</text>
+                    </g>
+                </svg>
+            </div>
+
+            <h2 class="welcome">Welcome back, <span id="welcomeName">Merchant</span>! 👋</h2>
+            <p class="subtitle">You're signed in to your Clari5Pay dashboard.</p>
+
+            <div class="user-panel">
+                <div class="row">
+                    <span class="label">Name</span>
+                    <span class="value" id="panelName">—</span>
+                </div>
+                <div class="row">
+                    <span class="label">Email</span>
+                    <span class="value" id="panelEmail">—</span>
+                </div>
+                <div class="row">
+                    <span class="label">Status</span>
+                    <span class="status-pill">● Logged in</span>
+                </div>
+            </div>
+
+            <button type="button" onclick="logout()">Log Out</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        // ── AUTH GUARD ────────────────────────────────────────────────────────
+        // The token was saved by the login page. No token => not logged in.
+        const token = localStorage.getItem('access_token');
+        const name = localStorage.getItem('user_name');
+
+        if (!token) {
+            // Not logged in — send them to the login page.
+            window.location.href = '/login';
+        } else {
+            // Show the name we stored at login.
+            if (name) {
+                document.getElementById('welcomeName').textContent = name;
+                document.getElementById('panelName').textContent = name;
+            }
+
+            // The JWT payload also carries the email — decode it (base64url).
+            try {
+                const part = token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
+                const payload = JSON.parse(atob(part));
+                if (payload.email) {
+                    document.getElementById('panelEmail').textContent = payload.email;
+                }
+                if (payload.name && !name) {
+                    document.getElementById('welcomeName').textContent = payload.name;
+                    document.getElementById('panelName').textContent = payload.name;
+                }
+            } catch (e) {
+                /* token couldn't be decoded — just show the name */
+            }
+        }
+
+        // ── LOGOUT ────────────────────────────────────────────────────────────
+        function logout() {
+            localStorage.removeItem('access_token');
+            localStorage.removeItem('user_name');
+            window.location.href = '/login';
+        }
+
+    </script>
+
+</body>
+
+</html>
